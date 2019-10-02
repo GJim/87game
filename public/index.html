@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Snake Game</title>
+        <style>
+            #playground{
+                width: 70%;
+                height: 700px;
+                float: left;
+            }
+            canvas{
+                display: block;
+                margin: 0 auto;
+            }
+            #chatroom {
+                float: right;
+                width: 25%;
+                height: 700px;
+                border: 1px solid black;
+                text-align: center;
+            }
+            #messages {
+                max-height: 600px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <div id="playground">
+        <canvas id="snake" width="608" height="608"></canvas>
+    </div>
+    <div id="chatroom">
+        <form id="form">
+            <input id="m" autocomplete="off" /><button>Send</button>
+        </form>
+        <div id="messages"></div>
+    </div>
+    <script src="/public/js/socket.io.js"></script>
+    <script src="/public/js/snake.js"></script>
+</html>

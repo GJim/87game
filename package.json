@@ -1,0 +1,18 @@
+{
+  "name": "87game",
+  "version": "0.0.1",
+  "description": "make a trash game for fun.",
+  "main": "index.js",
+  "author": "G.Jim Tsai <andyzero75@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "helmet": "^3.21.1",
+    "socket.io": "^2.3.0"
+  },
+  "scripts": {
+    "start": "node index"
+  }
+}
