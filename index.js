@@ -5,6 +5,7 @@ const compression = require('compression');
 const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
+const port = process.env.PORT || 80;
 
 // Declare game parameter
 const movingSpeed = 800;
@@ -49,6 +50,6 @@ io.on('connection', function(socket){
 });
 
 // start backend engine
-http.listen(80, () => {
-  console.log(`[INFO][PORT LISTEN]: 80, ${new Date().toLocaleString()}`);
+http.listen(port, () => {
+  console.log(`[INFO][PORT LISTEN]: ${port}, ${new Date().toLocaleString()}`);
 });
