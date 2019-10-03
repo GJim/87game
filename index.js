@@ -8,7 +8,7 @@ const io = require('socket.io')(http);
 const port = process.env.PORT || 80;
 
 // Declare game parameter
-const movingSpeed = 800;
+const movingSpeed = process.env.SPEED || 500;
 const leftCommand = ['LEFT', 'l'];
 const rightCommand = ['RIGHT', 'r'];
 const upCommand = ['UP', 'u'];
@@ -44,6 +44,8 @@ io.on('connection', function(socket){
     else if( rightCommand.includes(msg) && d !== "LEFT") game.setDirection("RIGHT");
     else if( upCommand.includes(msg) && d !== "DOWN") game.setDirection("UP");
     else if( downCommand.includes(msg) && d !== "UP") game.setDirection("DOWN");
+    else if( msg == "高雄") msg = "發大財";
+    else if( msg == "韓國瑜") msg = "***";
     // broadcast message to all client
     io.emit('chat', msg);
   });

@@ -68,8 +68,9 @@ socket.on('chat', function(msg){
     // Create p tag with msg from server
     const element = document.createElement("P");
     const text = document.createTextNode(msg);
-    element.appendChild(text);  
-    document.getElementById("messages").appendChild(element);
+    element.appendChild(text);
+    const messages = document.getElementById("messages");
+    messages.insertBefore(element, messages.childNodes[0]);
     // make noise
     sound(msg);
 });
@@ -91,3 +92,5 @@ document.getElementById("form").onsubmit = (e) => {
     input.value = '';
     return false;
 };
+
+alert("控制方法: 輸入 LEFT / RIGHT / UP / DOWN 任一指令")
